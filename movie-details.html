@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/movie-details.css">
+    <link rel="stylesheet" href="lib/swiper.css" />
+    <link rel="stylesheet" href="lib/fontawesome.css" />
+    <link rel="stylesheet" href="css/spinner.css" />
+    <title>MovieFlix App</title>
+    <script src="lib/swiper.js"></script>
+    <script src="movie.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="#">MovieFlix</a></div>
+            <ul>
+                <li><a href="home.html">Movies</a></li>
+                <li><a href="tv-shows.html">TV Shows</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="details">
+        <div class="bg-image"></div>
+        <div class="movie-detail">
+            <div class="back-btn">
+                <a href="home.html">Back To Movies</a>
+            </div>
+            <div class="container-detail">
+                <div class="container">
+                <div class="image-detail"><img src="./images/no-image.jpg" alt=""></div>
+                <div class="container-wrap">
+                    <h2>DESPICABLE ME 4</h2>
+                    <div class="wrap">
+                        <p class="shape-icon
+                        "><i class="fa fa-star"></i>7.3/10</p>
+                        <p>Release Date: <span class="date">2024-06-02</span></p>
+                        <p class="info">Gru and Lucy and their girls—Margo, Edith and Agnes—welcome a new member to the Gru family, Gru Jr., who is intent on tormenting his dad. Gru also faces a new nemesis in Maxime Le Mal and his femme fatale girlfriend Valentina, forcing the family to go on the run.</p>
+                        <h3>Genres</h3>
+                        <ul>
+                            <li>Animation</li>
+                            <li>Family</li>
+                            <li>Comedy</li>
+                            <li>Action</li>
+                        </ul>
+                        <div class="back-btn">
+                            <a href="home.html">Visit movie home page</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="movie-info">
+                    <h2>MOVIE INFO</h2>
+                    <ul>
+                        <li><span>Budget:</span>$100,000,000</li>
+                        <li><span>Revenue:</span>$886,256,896</li>
+                        <li><span>Runtime:</span>90 Minutes</li>
+                        <li><span>Status:</span>Release</li>
+                    </ul>
+                    <div class="production">
+                        <h3>Production Companies</h3>
+                        <p>Universal Pictures,Illumination</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><a href="#">MovieFlix</a></p>
+        <div class="footer-icon">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+        </div>
+    </footer>
+
+    <div class="spinner hidden">
+        <i class="fa fa-spinner fa-pulse"></i>
+    </div>
+</body>
+</html>
