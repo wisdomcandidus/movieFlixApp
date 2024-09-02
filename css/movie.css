@@ -114,6 +114,9 @@ header nav ul li a:hover{
     border-radius: 4px;
 }
  
+.search .container form .search-flex .btn .fa{
+    color: black;
+}
 /* movie */
 
 .movie-grid{
@@ -201,19 +204,19 @@ footer{
     height: 4rem;
 }
 
-.fa{
+footer .fa{
     color: white;
     margin:  0 0.5rem;
     font-size: 1.5rem;
     transition: all 0.3s ease-in-out;
 }
-.fa:hover{
+footer .fa:hover{
     font-size: 1.7rem;
     color: var(--hover-color);
 }
 
 .footer-icon{
-    padding: 3rem;
+    margin-left: 3rem;
 }
 /* tv shows */
 
@@ -241,6 +244,10 @@ footer{
         align-items: center;
         margin-top:1rem ;
         min-width:500px;
+    }
+
+    footer{
+        padding: 2rem 2rem;
     }
 }
 
