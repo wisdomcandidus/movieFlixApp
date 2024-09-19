@@ -233,7 +233,7 @@ footer .fa:hover{
     .movie-grid{
         padding: 0 4rem;
     }
-    .movie-grid .movies{
+    .movie-grid{
         display: grid;
         grid-template-columns:repeat(5, minmax(auto, 250px));
       
@@ -257,7 +257,7 @@ footer .fa:hover{
     .movie-grid{
         padding: 0 4rem;
     }
-    .movie-grid .movies{
+    .movie-grid{
         display: grid;
         grid-template-columns:repeat(4, minmax(auto, 250px));
       
@@ -275,7 +275,7 @@ footer .fa:hover{
     .movie-grid{
         padding: 0 3rem;
     }
-    .movie-grid .movies{
+    .movie-grid{
         display: grid;
         grid-template-columns:repeat(3, minmax(auto, 250px));
       
@@ -297,7 +297,7 @@ footer .fa:hover{
     .movie-grid{
         padding: 0 1rem;
     }
-    .movie-grid .movies{
+    .movie-grid{
         display: grid;
         grid-template-columns:repeat(2, minmax(auto, 250px));
         grid-auto-rows: minmax(auto,auto);
@@ -319,7 +319,7 @@ footer .fa:hover{
     .movie-grid{
         padding: 0 1rem;
     }
-    .movie-grid .movies{
+    .movie-grid{
         display: grid;
         grid-template-columns:repeat(1, minmax(auto, 250px));
         grid-auto-rows: minmax(auto,auto);
