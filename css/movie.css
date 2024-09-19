@@ -235,7 +235,7 @@ footer .fa:hover{
     }
     .movie-grid{
         display: grid;
-        grid-template-columns:repeat(5, minmax(auto, 250px));
+        grid-template-columns:repeat(5, minmax(180px, 250px));
       
         grid-auto-rows: minmax(auto,auto);
         gap: 1rem;
@@ -259,7 +259,7 @@ footer .fa:hover{
     }
     .movie-grid{
         display: grid;
-        grid-template-columns:repeat(4, minmax(auto, 250px));
+        grid-template-columns:repeat(4, minmax(180px, 250px));
       
         grid-auto-rows: minmax(auto,auto);
         gap: 1rem;
@@ -277,7 +277,7 @@ footer .fa:hover{
     }
     .movie-grid{
         display: grid;
-        grid-template-columns:repeat(3, minmax(auto, 250px));
+        grid-template-columns:repeat(3, minmax(180px, 250px));
       
         grid-auto-rows: minmax(auto,auto);
         gap: 1rem;
@@ -299,7 +299,7 @@ footer .fa:hover{
     }
     .movie-grid{
         display: grid;
-        grid-template-columns:repeat(2, minmax(auto, 250px));
+        grid-template-columns:repeat(2, minmax(180px, 250px));
         grid-auto-rows: minmax(auto,auto);
         gap: 1rem;
     }
