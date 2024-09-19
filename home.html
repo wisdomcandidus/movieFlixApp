@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/movie.css">
-    <link rel="stylesheet" href="css/spinner.css" />
+    <link rel="stylesheet" href="css/movie-details.css">
     <title>MovieFlix App</title>
     <script src="movie.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo"><a href="#">MovieFlix</a></div>
+            <div class="logo"><a href="home.html">MovieFlix</a></div>
             <ul>
-                <li><a href="home.html">Movies</a></li>
-                <li><a href="tv-shows.html">TV Shows</a></li>
+                <li><a href="/home.html" class="links">Movies</a></li>
+                <li><a href="/tv-shows.html" class="links">TV Shows</a></li>
             </ul>
         </nav>
     </header>
@@ -30,7 +30,7 @@
     <section class="search">
         <div class="container">
             <div class="error"></div>
-            <form action="">
+            <form action="search.html">
                 <label for=""><input type="radio" checked>Movies</label>
                 <label for=""><input type="radio">TV Shows</label>
                 <div class="search-flex">
@@ -42,119 +42,8 @@
             </form>
         </div>
     </section>
-        <section class="movie-grid">
-            <div class="movies">
-
-                <div class="tiles">
-                    <a href="movie-details.html">
-                    <img src="./images/no-image.jpg" alt="Movie title">
-                    <div class="content">
-                        <h3>Movie Title</h3>
-                        <p><strong>Release</strong>XX/XX/XXXX</p>
-                    </div>
-                </a>
-                </div>
-                <div class="tiles">
-                    <a href="movie-details.html">
-                    <img src="./images/no-image.jpg" alt="Movie title">
-                    <div class="content">
-                        <h3>Movie Title</h3>
-                        <p><strong>Release</strong>XX/XX/XXXX</p>
-                    </div>
-                </a>
-                </div>
-                <div class="tiles">
-                    <a href="movie-details.html">
-                    <img src="./images/no-image.jpg" alt="Movie title">
-                    <div class="content">
-                        <h3>Movie Title</h3>
-                        <p><strong>Release</strong>XX/XX/XXXX</p>
-                    </div>
-                </a>
-                </div>
-                <div class="tiles">
-                    <a href="movie-details.html">
-                    <img src="./images/no-image.jpg" alt="Movie title">
-                    <div class="content">
-                        <h3>Movie Title</h3>
-                        <p><strong>Release</strong>XX/XX/XXXX</p>
-                    </div>
-                </a>
-                </div>
-                <div class="tiles">
-                    <a href="movie-details.html">
-                    <img src="./images/no-image.jpg" alt="Movie title">
-                    <div class="content">
-                        <h3>Movie Title</h3>
-                        <p><strong>Release</strong>XX/XX/XXXX</p>
-                    </div>
-                </a>
-                </div>
-                <div class="tiles">
-                    <a href="movie-details.html">
-                    <img src="./images/no-image.jpg" alt="Movie title">
-                    <div class="content">
-                        <h3>Movie Title</h3>
-                        <p><strong>Release</strong>XX/XX/XXXX</p>
-                    </div>
-                </a>
-                </div>
-                <div class="tiles">
-                    <a href="movie-details.html">
-                    <img src="./images/no-image.jpg" alt="Movie title">
-                    <div class="content">
-                        <h3>Movie Title</h3>
-                        <p><strong>Release</strong>XX/XX/XXXX</p>
-                    </div>
-                </a>
-                </div>
-                <div class="tiles">
-                    <a href="movie-details.html">
-                    <img src="./images/no-image.jpg" alt="Movie title">
-                    <div class="content">
-                        <h3>Movie Title</h3>
-                        <p><strong>Release</strong>XX/XX/XXXX</p>
-                    </div>
-                </a>
-                </div>
-                <div class="tiles">
-                    <a href="movie-details.html">
-                    <img src="./images/no-image.jpg" alt="Movie title">
-                    <div class="content">
-                        <h3>Movie Title</h3>
-                        <p><strong>Release</strong>XX/XX/XXXX</p>
-                    </div>
-                </a>
-                </div>
-                <div class="tiles">
-                    <a href="movie-details.html">
-                    <img src="./images/no-image.jpg" alt="Movie title">
-                    <div class="content">
-                        <h3>Movie Title</h3>
-                        <p><strong>Release</strong>XX/XX/XXXX</p>
-                    </div>
-                </a>
-                </div>
-                <div class="tiles">
-                    <a href="movie-details.html">
-                    <img src="./images/no-image.jpg" alt="Movie title">
-                    <div class="content">
-                        <h3>Movie Title</h3>
-                        <p><strong>Release</strong>XX/XX/XXXX</p>
-                    </div>
-                </a>
-                </div>
-                <div class="tiles">
-                    <a href="movie-details.html">
-                    <img src="./images/no-image.jpg" alt="Movie title">
-                    <div class="content">
-                        <h3>Movie Title</h3>
-                        <p><strong>Release</strong>XX/XX/XXXX</p>
-                    </div>
-                </a>
-                </div>
-
-            
+        <section class="movies">
+            <div class="movie-grid">
             </div>
         </section>
         <footer>
@@ -166,7 +55,7 @@
             </div>
         </footer>
     
-        <div class="spinner hidden">
+        <div class="spinner">
             <i class="fa fa-spinner fa-pulse"></i>
         </div>
 </body>

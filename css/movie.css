@@ -49,9 +49,8 @@ header nav ul li{
 header nav ul li a{
     transition: all 0.4s ease-in-out;
 }
-header nav ul li a:hover{
+.a-link{
     color: var(--hover-color);
-    font-size: 1.1rem;
 }
 
 .logo a{
@@ -116,10 +115,11 @@ header nav ul li a:hover{
  
 .search .container form .search-flex .btn .fa{
     color: black;
+    width: 1rem;
 }
 /* movie */
 
-.movie-grid{
+.movies{
     width: 100%;
     padding: 0 3rem;
     display: flex;
@@ -127,15 +127,16 @@ header nav ul li a:hover{
     justify-content: center;
 }
 
-.movie-grid .movies{
+.movie-grid{
     display: grid;
-    grid-template-columns:repeat(6, minmax(auto, 250px));
+    grid-template-columns:repeat(5, minmax(180px, 250px));
   
     grid-auto-rows: minmax(auto,auto);
     gap: 1rem;
+    margin: 3rem;
 }
 
-.movie-grid .movies .tiles{
+ .tiles{
     background-color: rgb(37, 50, 99);
     padding: 0.5rem;
     color: white;
@@ -143,9 +144,9 @@ header nav ul li a:hover{
     border-radius: 4px;
 }
 
-.movie-grid .movies .tiles:hover{
+.tiles:hover{
     transform: scale(1.02);
-    background-color: var(--hover-color);
+    background-color: rgb(22, 26, 55);
 }
 .movie-grid .movies .tiles .content{
     padding: 0.4rem;
