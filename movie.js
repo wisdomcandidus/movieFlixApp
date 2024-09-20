@@ -11,7 +11,7 @@ async function movieDisplay(){
               <a href="movie-details.html?id=${movies.id}">
                 ${
                     movies.poster_path ?
-                    `<img src="https://image.tmdb.org/t/p/w200${movies.poster_path}" alt=${movies.title}>`
+                    `<img src="https://image.tmdb.org/t/p/w300${movies.poster_path}" alt=${movies.title}>`
                     :`<img src="./images/no-image.jpg" alt="Movie title">`
                 }
                 <div class="content">
