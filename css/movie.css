@@ -18,6 +18,21 @@ body{
 img{
     display: block;
 }
+.swiper{
+    width: 1200px;
+}
+
+.swiper-slide a{
+   display: inline-block;
+}
+.swiper-slide a h4{
+   text-align: center;
+}
+
+
+.swiper-slide a img{
+    max-width: 200px;
+}
 
 a{
     color: white;
@@ -64,10 +79,15 @@ header nav ul li a{
     width: 100%;
     min-height: 200px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     color: white;
-    
+    padding: 2rem 0;
+}
+
+.now-playing h1{
+    padding-bottom: 2rem;
 }
 
 /* for search styling */
@@ -117,7 +137,7 @@ header nav ul li a{
     font-size: 1rem;
 }
 /* movie grid for home*/
-.movies{
+.movies,.show-movie{
     padding:0rem 4rem;
     width: 100%;
     display: flex;
@@ -182,31 +202,36 @@ header nav ul li a{
 
 .details{
     position: relative;
-    height: 100%;
+    min-height: 100vh;
+    width: 100vw;
     color: white;
 }
 
 .bg-image{
     position: absolute;
-    background: url(../images/showcase-bg.jpg)center center/cover no-repeat;
-    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80vh;
     width: 100%;
-    opacity: 0.2;
+    opacity: 0.1;
     z-index: -1;
+    top:0;
+    left: 0;
    
 }
 
 
-.details .movie-detail .back-btn a{
+.details .movie-detail .back-btn1 a{
     display: inline-block;
     border: 1px solid var(--hover-color);
-    margin: 4rem;
-    padding: 0.5rem;
+    margin: 4rem 0;
+    padding: 1rem;
     border-radius: 4px;
     transition: all 0.1s ease-in-out;
 }
 
-.details .movie-detail .back-btn a:hover{
+.details .movie-detail .back-btn1 a:hover{
     background-color: var(--hover-color);
 }
 
@@ -214,21 +239,29 @@ header nav ul li a{
 
 .container-detail{
     padding: 0 4rem;
+    
 }
 
 .container-detail .container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+    min-height: 60vh;
 }
-.container-detail .container .image-detail img{
+.container-detail .container .image-detail{
     width:100%;
     min-width: 200px;
-    max-width: 350px;
+    max-width: 500px;
+}
+.container-detail .container .image-detail {
+    margin-right: 2rem;
 }
 
 .container-detail .container .container-wrap h2{
     text-align: center;
+}
+.container-detail .container .container-wrap ul li{
+    list-style: none;
 }
 
 .container-detail .container .container-wrap .wrap p{
@@ -246,8 +279,19 @@ header nav ul li a{
     max-width: 550px;
 }
 
-.container-detail .container .container-wrap .back-btn a{
-    margin: 2rem 0;
+
+
+.back-btn a{
+    display: inline-block;
+    margin: 2rem 4rem;
+    padding: 1rem 2rem;
+    border: 1px solid var(--hover-color);
+    border-radius: 4px;
+    transition: all 0.4s ease-in-out;
+}
+
+.back-btn a:hover{
+    background-color: var(--hover-color);
 }
 
 .movie-info{
@@ -261,6 +305,7 @@ header nav ul li a{
     padding: 0.5rem 0;
     margin: 0.5rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.462);
+    list-style: none;
 }
 .movie-info ul li span{
     color: var(--hover-color);
@@ -314,6 +359,10 @@ footer .fa:hover{
     margin-left: 3rem;
 }
 
+.star{
+    color: var(--hover-color);
+}
+
 /* spinner */
 
 .spinner{
@@ -354,9 +403,17 @@ body .spinner .fa{
 }
 
 /* media query */
-@media (min-width:999px) and (max-width: 1300px) {
+
+@media (min-width:1101px) and (max-width:1300px) {
+    
+}
+@media (min-width:999px) and (max-width: 1100px) {
     header nav{
         padding: 0 2rem;
+    }
+
+    .swiper{
+        width: 1100px;
     }
 
     .movies{
@@ -382,6 +439,10 @@ body .spinner .fa{
 }
 
 @media (min-width:801px) and (max-width: 999px) {
+
+    .swiper{
+        width:700px;
+    }
 
     .movies{
         padding: 0 2rem;
@@ -410,6 +471,9 @@ body .spinner .fa{
         padding: 0 1rem;
     }
 
+    .swiper{
+        width: 500px;
+    }
     .search .container form .search-flex{
         width: 100%;
         display: flex;
@@ -436,6 +500,10 @@ body .spinner .fa{
         grid-template-columns:repeat(2, minmax(180px, 250px));
         grid-auto-rows: minmax(auto,auto);
         gap: 1rem;
+    }
+
+    .swiper{
+        width: 400px;
     }
 
     .search .container form .search-flex{
@@ -478,6 +546,9 @@ body .spinner .fa{
         min-width: 250px;
     }
 
+    .swiper{
+        width: 200px;
+    }
 
     header nav{
         padding: 0 2rem;
@@ -511,6 +582,9 @@ body .spinner .fa{
         min-width: 250px;
     }
 
+    .swiper{
+        width: 180px;
+    }
 
     header nav{
         padding: 0 1rem;
