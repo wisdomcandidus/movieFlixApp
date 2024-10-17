@@ -441,7 +441,7 @@ body .spinner .fa{
 @media (min-width:801px) and (max-width: 999px) {
 
     .swiper{
-        width:700px;
+        width:600px;
     }
 
     .movies{
@@ -503,7 +503,7 @@ body .spinner .fa{
     }
 
     .swiper{
-        width: 400px;
+        width: 200px;
     }
 
     .search .container form .search-flex{
@@ -527,7 +527,7 @@ body .spinner .fa{
     }
    
 }
-@media (min-width:351px) and (max-width: 399px) {
+@media (min-width:351px) and (max-width: 400px) {
     .movie-grid{
         padding: 0 0.5rem;
     }

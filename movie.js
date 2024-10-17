@@ -61,16 +61,16 @@ async function displaySlider() {
         disableOnInteraction: false,
       },
       breakpoints: {
-        450: {
+        360: {
           slidesPerView: 1,
         },
         500: {
           slidesPerView: 2,
         },
-        800: {
+        900: {
           slidesPerView: 3,
         },
-        901: {
+        1000: {
           slidesPerView: 4,
         },
         1100: {
