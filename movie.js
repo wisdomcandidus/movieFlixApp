@@ -39,7 +39,7 @@ async function displaySlider() {
           <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" />
         
         <h4>
-          <i class="fa fa-star star"></i> ${movie.vote_average} / 10
+          <i class="fa fa-star star"></i> ${movie.vote_average.toFixed(1)} / 10
         </h4>
         </a>
       `;
