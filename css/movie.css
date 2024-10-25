@@ -15,6 +15,23 @@ body{
     background-color: var(--background-color);
 }
 
+.err{
+    padding: 0.5rem;
+    background-color: rgba(255, 0, 0, 0.349);
+    color: white;
+    width: 100%;
+    margin-bottom: 16px;
+    text-align: center;
+}
+.succ{
+    padding: 0.5rem;
+    background-color: rgba(17, 255, 0, 0.264);
+    color: white;
+    width: 100%;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
 img{
     display: block;
 }
@@ -137,7 +154,14 @@ header nav ul li a{
     font-size: 1rem;
 }
 /* movie grid for home*/
-.movies,.show-movie{
+.movies{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+movies,.show-movie{
     padding:0rem 4rem;
     width: 100%;
     display: flex;
@@ -147,7 +171,7 @@ header nav ul li a{
 }
 .movie-grid{
     display: grid;
-    grid-template-columns:repeat(6, minmax(200px, 250px));
+    grid-template-columns:repeat(5, minmax(200px, 250px));
     grid-auto-rows: minmax(auto,auto);
     gap: 1rem;
 }
@@ -175,9 +199,11 @@ header nav ul li a{
 
 /* for pagination */
 .pagination{
-    margin-top:1rem;
     color: white;
     margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .pagination p{
@@ -402,6 +428,13 @@ body .spinner .fa{
     margin: 2rem 0;
 }
 
+.movies h2{
+    color: white;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
 /* media query */
 
 @media (min-width:1101px) and (max-width:1300px) {

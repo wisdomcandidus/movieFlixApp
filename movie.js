@@ -1,6 +1,17 @@
 
 const global = {
-    currentPage: window.location.pathname
+    currentPage: window.location.pathname,
+    search:{
+        type: "",
+        term: "",
+        page:1,
+        totalPages:1,
+        totalresults:0
+    },
+    api:{
+        APIkey: '3c8685db24642e4c2b971877340f4ae9',
+        APIurl: 'https://api.themoviedb.org/3/'
+    }
 }
 
 async function movieDisplay(){
@@ -24,8 +35,143 @@ async function movieDisplay(){
         document.querySelector('.movie-grid').appendChild(myDiv)
     })
 }
+//for search item
 
+async function searchResult(){
+    const query = window.location.search;
+    const UrlParamas = new URLSearchParams(query);
+
+    global.search.type = UrlParamas.get('type');
+    global.search.term = UrlParamas.get('input-term');
+
+    if(global.search.term !=='' && global.search.term !== null){
+        const {results,page,total_results,total_pages} = await searchAPI();
+
+        global.search.page = page;
+        global.search.totalPages = total_pages;
+        global.search.totalresults = total_results;
+      
+        results.forEach(searchmovies =>{
+            const myDiv = document.createElement('div');
+            myDiv.classList.add('tiles');
+            myDiv.innerHTML =  `
+                  <a href="${global.search.type}-details.html?id=${searchmovies.id}">
+                    ${
+                        searchmovies.poster_path ?
+                        `<img src="https://image.tmdb.org/t/p/w300${searchmovies.poster_path}" alt=${global.search.type ? searchmovies.title : searchmovies.name}>`
+                        :`<img src="./images/no-image.jpg" alt="Movie title">`
+                    }
+                    <div class="content">
+                        <h3>${global.search.type ? searchmovies.title : searchmovies.name}</h3>
+                        <p><strong>Release</strong>: ${global.search.type ? searchmovies.release_date : searchmovies.first_air_date}</p>
+                    </div>
+                </a>
+            `;
+
+            document.querySelector('.movies h2').innerHTML=`
+                    <h2>${results.length} of ${global.search.totalresults} results of the movie name "${global.search.term}" </h2>
+            `
+            
+            document.querySelector('.movie-grid').appendChild(myDiv)
+        })
+
+        displayPagination();
+
+        if(results.length === 0){
+            noResult('no result found', 'err');
+            return;
+        }
+        successful('result found', 'succ');
+        return;
+    }else{
+        errAlert('fields canot be empty', 'err');
+        hideSpinner()
+    }
+
+}
+
+function displayPagination(){
+
+    const div = document.querySelector('.pagination');
+    div.innerHTML = `
+         <div class="pag-contain">
+                <button class="prev">Prev</button>
+                <button class="next">next</button>
+            </div>
+            <p>Page ${global.search.page} of ${global.search.totalPages}</p>
+    `
+    if(global.search.page === 1){
+        document.querySelector('.prev').disabled = true;
+    }
+
+    if(global.search.page === global.search.totalPages){
+        document.querySelector('.next').disabled = true;
+    }
+    
+    document.querySelector('.next').addEventListener('click',async ()=>{
+        document.querySelector('.movies h2').innerHTML = '';
+        document.querySelector('.movie-grid').innerHTML = '';
+        global.search.page++;
+
+        const {results,pages,total_pages} = await searchAPI();
+            searchResult();
+    })
+    document.querySelector('.prev').addEventListener('click',async ()=>{
+        document.querySelector('.movies h2').innerHTML = '';
+        document.querySelector('.movie-grid').innerHTML = '';
+        global.search.page--;
+
+        const {results,pages,total_pages} = await searchAPI();
+            searchResult();
+    })
+}
+
+ async function searchAPI(){
+    const API_Key = global.api.APIkey;
+    const API_URL = global.api.APIurl;
+
+    showSpinner()
+
+    const res = await fetch(`${API_URL}search/${global.search.type}?api_key=${API_Key}&language=en-US&query=${global.search.term}&page=${global.search.page}`);
+
+    const data = await res.json();
+    hideSpinner()
+    return data;
+ }
+
+
+// function for error
+
+function errAlert(message,classname){
+    const div = document.createElement('div');
+    div.classList.add(classname);
+    div.innerHTML = `<p>${message}</p>`;
+    document.querySelector('.error').appendChild(div);
+    setTimeout(()=>{
+        div.remove()
+    },3000)
+}
+
+function noResult(message,classname){
+    const div = document.createElement('div');
+    div.classList.add(classname);
+    div.innerHTML = `<p>${message}</p>`;
+    document.querySelector('.error').appendChild(div);
+    setTimeout(()=>{
+        div.remove()
+    },3000)
+}
+function successful(message,classname){
+    const div = document.createElement('div');
+    div.classList.add(classname);
+    div.innerHTML = `<p>${message}</p>`;
+    document.querySelector('.error').appendChild(div);
+    setTimeout(()=>{
+        div.remove()
+    },3000)
+}
 // for the swiper
+
 
 async function displaySlider() {
     const { results } = await fetchMovie('movie/now_playing');
@@ -232,8 +378,8 @@ function hideSpinner(){
 }
 
 async function fetchMovie(movies_endpoint) {
-    const API_Key = '3c8685db24642e4c2b971877340f4ae9';
-    const API_URL = 'https://api.themoviedb.org/3/';
+    const API_Key = global.api.APIkey;
+    const API_URL = global.api.APIurl;
     showSpinner()
     const res = await fetch(`${API_URL}${movies_endpoint}?api_key=${API_Key}&language=en-US`);
 
@@ -274,8 +420,8 @@ function init(){
         case '/movie-details.html':
             movie_Details();
         break;
-        case './search.html':
-            console.log('search');
+        case '/search.html':
+            searchResult();
         break;
     }
     
